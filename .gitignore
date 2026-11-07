@@ -1,0 +1,69 @@
+# =============================================================================
+# PRE-DEADLINE WHITELIST. The repo is public, but the approach stays private
+# until submissions close (Sun Nov 8, 11:59 PM AoE = Mon Nov 9, 11:59 UTC).
+#
+# Everything is ignored by default; only the paths re-included below are
+# published. A new file or folder stays private unless it is added here.
+#
+# Before every push, check:   git status --ignored   and   git ls-files
+# After the deadline, replace this file with a normal blacklist .gitignore.
+#
+# Kept private, and why:
+#   CLAUDE.md, src/, plan/, data/, docs/notes/, reports/, research_notes/
+#                          -> our approach, code, pre-registration, runs, notes
+#   docs/incident/KEY_FACTS.md -> our analysis of the incident
+#   starter/               -> which third-party repos and datasets we chose
+#                             reveals the approach (and ~400 MB of clones)
+#   docs/sprint/papers/*   -> PDFs (third-party copyright; related/ hints at
+#                             the approach); only the index README is public
+#   docs/incident/sources/, docs/sprint/external/, docs/misc./
+#                          -> verbatim copies of third-party pages and reports
+#   .env, .venv            -> secrets and a symlinked local interpreter
+# =============================================================================
+
+# 1. Ignore everything.
+/*
+
+# 2. Root files that are safe to publish.
+!/.gitignore
+!/README.md
+
+# 3. Sprint-page notes (public information from apartresearch.com).
+#    A file can only be re-included if its parent folder is re-included,
+#    so each level is opened, then emptied, then the safe files are re-added.
+!/docs/
+/docs/*
+!/docs/sprint/
+/docs/sprint/*
+!/docs/sprint/README.md
+!/docs/sprint/0[1-7]_*.md
+
+# Reading-list index only (no PDFs, no related/ folder).
+!/docs/sprint/papers/
+/docs/sprint/papers/*
+!/docs/sprint/papers/README.md
+
+# Official report template (blank, from the organizers).
+!/docs/sprint/template/
+/docs/sprint/template/*
+!/docs/sprint/template/README.md
+!/docs/sprint/template/apart_report_template.md
+
+# 4. Safety net: these never get published, even if a rule above is loosened.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+CLAUDE.md
+**/notes/
+**/data/
+**/runs/
+**/logs/
+*.jsonl
