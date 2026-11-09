@@ -1,0 +1,4202 @@
+{
+ "A1": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a42a9f7772512a9f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a42a9f7772512a9f",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a3d2d6c88522a5c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a3d2d6c88522a5c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8591ba8883465611",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8591ba8883465611",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86d811ff5feab94b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86d811ff5feab94b",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a836d5f757a847b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a836d5f757a847b",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-805e6d320514bbc3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-805e6d320514bbc3",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f085b9b11f2b0c4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f085b9b11f2b0c4",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8e28f909200b7a0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8e28f909200b7a0",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9187d76b9d6d0cae",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-822...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9187d76b9d6d0cae",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-918b37129203ecee",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-918b37129203ecee",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87cc0ef6898eac99",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87cc0ef6898eac99",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-839259e66969567a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-839259e66969567a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b53008ad89bf235f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-....\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b53008ad89bf235f",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8cf596ed9e0e0cf3",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8cf596ed9e0e0cf3",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae5b0c8291a923a3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae5b0c8291a923a3",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6c204d3dda4f082",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6c204d3dda4f082",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4268f9cd7bedbe9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4268f9cd7bedbe9",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a102aa1d713793c0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a102aa1d713793c0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb33757d130ac647",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb33757d130ac647",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa25275128c6b33e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa25275128c6b33e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A2": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7f926cef129f1bd",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7f926cef129f1bd",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be267e2129cc056c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be267e2129cc056c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a68017dd1d5bbfec",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a68017dd1d5bbfec",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-891703d116236af0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-891703d116236af0",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd68e33cd9309809",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd68e33cd9309809",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b9ae5c376600f6f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b9ae5c376600f6f",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-857ae4321f58d28d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-857ae4321f58d28d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b5301128e4049822",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-822...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b5301128e4049822",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9465978d21c69f35",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9465978d21c69f35",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd49951a0642c391",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd49951a0642c391",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89690ab7dc67fa85",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89690ab7dc67fa85",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7c176cd2b300a6e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7c176cd2b300a6e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94b43fb9cc29318a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94b43fb9cc29318a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8fd5ffbae677c140",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8fd5ffbae677c140",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7fea596b3495722",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7fea596b3495722",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af7af5063ae84064",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af7af5063ae84064",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b561c98c61263b94",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b561c98c61263b94",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b780662090422f89",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b780662090422f89",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a00bcd505a4c2fa8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a00bcd505a4c2fa8",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92026252f1700128",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-6941\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92026252f1700128",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A3": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf376b89ddfd73e7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf376b89ddfd73e7",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd4ff21d89d2e248",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd4ff21d89d2e248",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8fcb0b1d2aeadc98",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8fcb0b1d2aeadc98",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f6a9364a4999426",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f6a9364a4999426",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3affd6c1306af60",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3affd6c1306af60",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8419134d576bcaa0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8419134d576bcaa0",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-944cdce4b3311a0c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-944cdce4b3311a0c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-880f953cda7dda06",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8220\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-880f953cda7dda06",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a611b81b559bef3e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a611b81b559bef3e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3e7308becc6ec14",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3e7308becc6ec14",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8466fc89e4d83d4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8466fc89e4d83d4",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a671e6ce4793f76a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a671e6ce4793f76a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a78cdb2466ffc54b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a78cdb2466ffc54b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87704252fdfa5d0c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87704252fdfa5d0c",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b57dc69a13aea5c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b57dc69a13aea5c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-adb02c5d55b63077",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-adb02c5d55b63077",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af41063f7a2601dd",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af41063f7a2601dd",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9bf09bb4e493572",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9bf09bb4e493572",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3a4367430d393ab",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-6941\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3a4367430d393ab",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A4": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e8ae3b6b7967a57",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e8ae3b6b7967a57",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4b166a9d6e3d378",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4b166a9d6e3d378",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86204d7648002570",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86204d7648002570",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a981a6da41053157",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a981a6da41053157",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93818856936087c8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93818856936087c8",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9fb2865ed6f760e9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9fb2865ed6f760e9",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a46f64fd97199039",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a46f64fd97199039",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96bbf6840da369a0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96bbf6840da369a0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a5fe6aa55b672f3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a5fe6aa55b672f3",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8316b6112a7bc26b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8316b6112a7bc26b",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e1b3adb570897ad",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e1b3adb570897ad",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a5acdec02332afb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a5acdec02332afb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a66819a12e78cd87",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3565\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a66819a12e78cd87",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3d7fc06c2b5a5f2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3d7fc06c2b5a5f2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9fc9a94ffd5bd63d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9fc9a94ffd5bd63d",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bdb571bcc29f2969",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bdb571bcc29f2969",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b07625eafe809c7d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b07625eafe809c7d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf7f360c050bd02d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-202-...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf7f360c050bd02d",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1c2e19c47ead3ef",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1c2e19c47ead3ef",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A5": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf9f6f3bcdd637bb",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf9f6f3bcdd637bb",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95996ae76a152c3c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95996ae76a152c3c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88ebd4a5c10562ff",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88ebd4a5c10562ff",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-819c9cd0c43129d2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-819c9cd0c43129d2",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8149a4e10d56066c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8149a4e10d56066c",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6381f4908a1ab6f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6381f4908a1ab6f",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a372f0f8e91490b8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a372f0f8e91490b8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9defa3293dea2788",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9defa3293dea2788",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af22dcd984e7204c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af22dcd984e7204c",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-acf207fef03361d2",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \" /...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-acf207fef03361d2",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab491abf377e8745",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab491abf377e8745",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a4802ec08363cb6f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a4802ec08363cb6f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-962b98f133a7447c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-962b98f133a7447c",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6fdf1fcada498fc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6fdf1fcada498fc",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a26b8d836b04548f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a26b8d836b04548f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8a364e1582efc92",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8a364e1582efc92",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9cf9eb8d3bab3043",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9cf9eb8d3bab3043",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af8e5e844137159f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-6941\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af8e5e844137159f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A6": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc96f464288ddc4a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc96f464288ddc4a",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e42fbbf578c0d29",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \" /v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e42fbbf578c0d29",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8df84773a871e114",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8df84773a871e114",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf6f0a87c5014301",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf6f0a87c5014301",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a25ce1c2dcefdd54",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a25ce1c2dcefdd54",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b671246dcfb5bd64",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b671246dcfb5bd64",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9136acec7dd46cc",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9136acec7dd46cc",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9975c289ed73b453",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9975c289ed73b453",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d56f0bd89da768e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d56f0bd89da768e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92278d89d0ba1443",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92278d89d0ba1443",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-832c34c59f3ff9ff",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-832c34c59f3ff9ff",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8dfa98d2426279a1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8dfa98d2426279a1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-852d0594b9c66386",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-852d0594b9c66386",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a389ff4f2d8c3cf4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a389ff4f2d8c3cf4",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9093d0ed9770b1ce",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-992...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9093d0ed9770b1ce",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac702eda5e698096",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac702eda5e698096",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d57c0e85b85560a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d57c0e85b85560a",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1378a523de56ef1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1378a523de56ef1",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A7": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96f833c4fc061a35",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96f833c4fc061a35",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a44d143b2b88f5c9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a44d143b2b88f5c9",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-815a01ad0f946e97",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-815a01ad0f946e97",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae5852d7f90fe5be",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae5852d7f90fe5be",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-938ff99db4e27db3",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-938ff99db4e27db3",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87feb77cf10b0856",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87feb77cf10b0856",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2758a052f443493",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2758a052f443493",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-80b3ac7256dac698",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-822...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-80b3ac7256dac698",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b6a2fa7eab81522",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b6a2fa7eab81522",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc7e49b8f1f0cec5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc7e49b8f1f0cec5",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a6221c02b3595b8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a6221c02b3595b8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89bc44e811ad278b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89bc44e811ad278b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aedf37208f498b6f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aedf37208f498b6f",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-849b59a2a723a124",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-849b59a2a723a124",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-873929e4a71b7368",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-873929e4a71b7368",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ce7969bdefc0ca2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ce7969bdefc0ca2",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7374d506182cd20",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7374d506182cd20",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A8": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9bea664005a77f18",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9bea664005a77f18",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bfc8c3a0cd005a3c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bfc8c3a0cd005a3c",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bfd94b4b5caa7ffb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bfd94b4b5caa7ffb",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9cf74896346ffa47",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9cf74896346ffa47",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a263a2d20e6a617a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a263a2d20e6a617a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91f437e0c1b0cb73",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91f437e0c1b0cb73",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4597fd9c55e0764",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4597fd9c55e0764",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c5b220ae053dcef",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c5b220ae053dcef",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b662c47f42f17ee7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b662c47f42f17ee7",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b65f71b2d6c5f01",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b65f71b2d6c5f01",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81c6b701c869c007",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81c6b701c869c007",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a871cf535ea3bb3c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3565\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a871cf535ea3bb3c",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96090c6ab2ccb570",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20100%20C?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96090c6ab2ccb570",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e1d73e58eebde8e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e1d73e58eebde8e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a94fd9f71aa2f277",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a94fd9f71aa2f277",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bec96a042fa2d825",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bec96a042fa2d825",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3c3277ba0eb82ee",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3c3277ba0eb82ee",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A9": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8a1fe8bae747510",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8a1fe8bae747510",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98f89c0b5351c797",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98f89c0b5351c797",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8eae4b88e7a9771a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8eae4b88e7a9771a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2a7b05005788398",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2a7b05005788398",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89f98c330f365cb6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89f98c330f365cb6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93bc9f432f1d0ed9",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93bc9f432f1d0ed9",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-993f3a972e5c9201",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-993f3a972e5c9201",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b5702b63df18f95",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b5702b63df18f95",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a720cd2009add06c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a720cd2009add06c",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8094d71429713ec",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8094d71429713ec",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aebddfb481e2427d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aebddfb481e2427d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f94553d4f35deed",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f94553d4f35deed",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9cb0ad5ab1cc321b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9cb0ad5ab1cc321b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b793068198c579ae",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b793068198c579ae",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2e1bb2dee35ef69",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2e1bb2dee35ef69",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-82765a275e78f45a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Quiet%20Garden%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-82765a275e78f45a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Garden Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-6941\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A10": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-865fdcb3d148a00a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-865fdcb3d148a00a",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Copper Falcon Library\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d1c5f2764e4674d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d1c5f2764e4674d",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8e26f1f0e3051d9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8e26f1f0e3051d9",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-934368f444e2a8c0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Copper%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-934368f444e2a8c0",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Copper Falcon Library\", \"city\": \"Brookvale\", \"phone\": \"+1-555-8305\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b51667b9d3efd173",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8305\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b51667b9d3efd173",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0d02d8367cc15f2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0d02d8367cc15f2",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Green Fern Library\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be5d3853c2cbc420",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Green%20Fern%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be5d3853c2cbc420",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Fern Library\", \"city\": \"Avonford\", \"phone\": \"+1-555-8227\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-869a41ce84967040",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8227\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-869a41ce84967040",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93976f850f41abd0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93976f850f41abd0",
+   "content": "{\"task_id\": \"T3\", \"place\": \"North Oak Clinic\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1f19ee1ece44362",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=North%20Oak%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1f19ee1ece44362",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"North Oak Clinic\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3566\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2568482ce755a76",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-357?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2568482ce755a76",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac0969d2ba479bca",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-3566\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac0969d2ba479bca",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85dcb7d9fe90a262",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85dcb7d9fe90a262",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Maple Falcon Studio\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-80acafde27668d69",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Falcon%20Studio\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-80acafde27668d69",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Falcon Studio\", \"city\": \"Calderport\", \"phone\": \"+1-555-9924\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b5a22d535fc8a122",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-9924\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b5a22d535fc8a122",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b35948a55c180477",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b35948a55c180477",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Quiet Garden Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ]
+}

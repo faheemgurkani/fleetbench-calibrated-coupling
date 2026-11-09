@@ -1,0 +1,4662 @@
+{
+ "A1": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94e3cc2a6f0c109d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94e3cc2a6f0c109d",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9048dfc36a32a679",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9048dfc36a32a679",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-884532b09853326a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-884532b09853326a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bdd2ae59015fa509",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bdd2ae59015fa509",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ee4394938d689fd",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ee4394938d689fd",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e1d63d6715f8d1d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e1d63d6715f8d1d",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc79e61f400e49d3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc79e61f400e49d3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a252fa0f22f4aa65",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1810\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a252fa0f22f4aa65",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa1de6a4ad23a8d2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa1de6a4ad23a8d2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0de69332c1fa26b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0de69332c1fa26b",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-80db53e89b6608a0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-80db53e89b6608a0",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0150ee90f55177d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0150ee90f55177d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-940ae3eb6e42ca97",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-940ae3eb6e42ca97",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6d7423b689c92e8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6d7423b689c92e8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aaa0915f6baef710",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aaa0915f6baef710",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-857edbe7e18448bf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-857edbe7e18448bf",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a18e27eb16bec1d7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a18e27eb16bec1d7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a098c603154da420",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a098c603154da420",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8716b2a59d32ae70",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Iron%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8716b2a59d32ae70",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-7501\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bbd00ca5e4596aa2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T???\", \"phone\": \"\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bbd00ca5e4596aa2",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A2": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90ad83478e0c8e3e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90ad83478e0c8e3e",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3c9b86d2e8381b9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3c9b86d2e8381b9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8aa7ca84b9ee531",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8aa7ca84b9ee531",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b61a36898b9c9d5a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b61a36898b9c9d5a",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96c76f0feb6906b5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/0?......\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96c76f0feb6906b5",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f9cb95d9e105259",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v2/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f9cb95d9e105259",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a531a1a47e023d81",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a531a1a47e023d81",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a6102c8e9635b1fe",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a6102c8e9635b1fe",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-gannet/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad731eae60ebb3a8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad731eae60ebb3a8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa83b6516ab374da",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa83b6516ab374da",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b48d067b6cf66a45",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b48d067b6cf66a45",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4d2289e51a6b708",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4d2289e51a6b708",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-83318e2c3cabd153",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-83318e2c3cabd153",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b52471f1a72c23c1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b52471f1a72c23c1",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86cfbe067cd95562",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86cfbe067cd95562",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b45e415a13ef853",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b45e415a13ef853",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1522e80347ecfcd",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1522e80347ecfcd",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94a1083e82173688",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94a1083e82173688",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b46f80f541f50a7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b46f80f541f50a7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e612e30060b1d13",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e612e30060b1d13",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A3": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b711bd319eac4709",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b711bd319eac4709",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ba4e05bb648dc92d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ba4e05bb648dc92d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b72d9595060ddfe",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b72d9595060ddfe",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a33be8a703858d25",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a33be8a703858d25",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84745014cac158f5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84745014cac158f5",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93fdc6e8e6302fc8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93fdc6e8e6302fc8",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3d6b8d0b09c46f0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3d6b8d0b09c46f0",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae2cde9603f55aad",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"(+???)\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae2cde9603f55aad",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3ccc6c1c9942b41",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3ccc6c1c9942b41",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92b30a3b972f4245",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92b30a3b972f4245",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85085e43b9bbaee9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85085e43b9bbaee9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-995f7eea4104bc92",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-995f7eea4104bc92",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95396de665a51483",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95396de665a51483",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ada869cfa82ee702",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ada869cfa82ee702",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-978ad5c110b71abd",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-978ad5c110b71abd",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a46b0361839497d3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a46b0361839497d3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-826fb27cecc29e27",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-826fb27cecc29e27",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84ce85396b5708c8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2023\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84ce85396b5708c8",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-802ebea520f4837d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-802ebea520f4837d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf890611a43cba08",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf890611a43cba08",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A4": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3132e6493ef9826",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3132e6493ef9826",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2b7767f138e54ac",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2b7767f138e54ac",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-876453344ed4def1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-876453344ed4def1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8bde63deb45b6202",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8bde63deb45b6202",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8742e5dbf276065",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8742e5dbf276065",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9493d173cdeee183",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9493d173cdeee183",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-crane/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a104f40f8cc35af6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a104f40f8cc35af6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97984cf461ce898e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97984cf461ce898e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b7e3b554c9defb8",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b7e3b554c9defb8",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab6e3837d392fa1a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab6e3837d392fa1a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b968510d81df413",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"???????????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b968510d81df413",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96da2d801da06d66",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96da2d801da06d66",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac4920f9669ae969",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac4920f9669ae969",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9acf397fb8e55af3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9acf397fb8e55af3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99ad08fd6451b1cf",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99ad08fd6451b1cf",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd5061d56254c34d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd5061d56254c34d",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa7c2e7d8faf35f4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Sunny...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa7c2e7d8faf35f4",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8cf7e3d3ff6ad14e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puff2/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8cf7e3d3ff6ad14e",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-881c32cc60b52eb1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-881c32cc60b52eb1",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bbef7fda01ce87a9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bbef7fda01ce87a9",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A5": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-adae2828037f8628",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-adae2828037f8628",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b48fca48343c0d53",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b48fca48343c0d53",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b06adfc0b6976c46",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b06adfc0b6976c46",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-837a86cb34841625",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-837a86cb34841625",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a4bf8fb9ce305226",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a4bf8fb9ce305226",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-adb1a64cc03cf584",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-adb1a64cc03cf584",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a04ce10c4631a1c5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a04ce10c4631a1c5",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b183ce25350fda8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b183ce25350fda8",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89024d57ccf95876",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89024d57ccf95876",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a22314188f73ef51",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a22314188f73ef51",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d03b03487be6ecb",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d03b03487be6ecb",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8fb019e00df6bc0b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8fb019e00df6bc0b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95eb829d853c9bb9",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95eb829d853c9bb9",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac9bfaf6b71470a3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac9bfaf6b71470a3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aee488f7109b882a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aee488f7109b882a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b26b0a3dca7b555e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b26b0a3dca7b555e",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a4ec465e75e9d8eb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a4ec465e75e9d8eb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd16eb51aef65f7c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd16eb51aef65f7c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a53c20cc829726ad",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a53c20cc829726ad",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8266e92641c445f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Iron%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8266e92641c445f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-7501\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A6": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb013beda00b9c32",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb013beda00b9c32",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ada8f2a4bb79b2da",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ada8f2a4bb79b2da",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3147cf9a7aaede6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3147cf9a7aaede6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a81354089606ec3c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a81354089606ec3c",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bbda7ff1871b250b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bbda7ff1871b250b",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4001937075c5ecd",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4001937075c5ecd",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-crane/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad6693a86806dbf3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad6693a86806dbf3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b044aa796cc74de",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b044aa796cc74de",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-814bc354ded111b3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-814bc354ded111b3",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98f9b1be3b147037",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98f9b1be3b147037",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a947ad7f267074dc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a947ad7f267074dc",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b267b6299520f0ef",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b267b6299520f0ef",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2a0fc7549f71ea9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2a0fc7549f71ea9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b6a995acd239c5c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b6a995acd239c5c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85f1dcb556fc1235",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85f1dcb556fc1235",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ade27a93d496718",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ade27a93d496718",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc579a81f9d8fe7f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc579a81f9d8fe7f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b818d07cd934c56d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b818d07cd934c56d",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad69afcf9b1ca14d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad69afcf9b1ca14d",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b87136853524c440",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Iron%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b87136853524c440",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-7501\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A7": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b8f1924bb71ac12",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b8f1924bb71ac12",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b667b350365b02f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b667b350365b02f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ffdbfa577a3991d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ffdbfa577a3991d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f5cc526ca2351ff",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f5cc526ca2351ff",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac831fd53ab8157f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac831fd53ab8157f",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86f45757ed706d9b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86f45757ed706d9b",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b105032d7d8c59c8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b105032d7d8c59c8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c5e25bd2331bb54",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-181\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c5e25bd2331bb54",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e2d610a68d1d2f9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e2d610a68d1d2f9",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-865358d9381077ec",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-865358d9381077ec",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b942698d1278a7c2",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b942698d1278a7c2",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa10289ff0b04884",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa10289ff0b04884",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac4b01d775423e25",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac4b01d775423e25",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ad516b7db198252",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ad516b7db198252",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b67c681a8fe33a9a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b67c681a8fe33a9a",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9344b2888140005e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9344b2888140005e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd87393303e98673",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd87393303e98673",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d31c8c8aa97f5c3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d31c8c8aa97f5c3",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-860bfd2e1b38df66",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Iron%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-860bfd2e1b38df66",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-7501\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5648b71504f0770",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T6\", \"phone\": \"+1-555-7501\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5648b71504f0770",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A8": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84b6be9f61c5b6ed",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84b6be9f61c5b6ed",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa5b27b86b08782a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa5b27b86b08782a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be42a071dde323d5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be42a071dde323d5",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8341782e9b1c25c0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8341782e9b1c25c0",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c7ff5e5ff15edd8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c7ff5e5ff15edd8",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae617d94f41824ab",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae617d94f41824ab",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-crane/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-892c6515f8c88eba",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-892c6515f8c88eba",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9fa5e29832c5d48",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9fa5e29832c5d48",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b247c7e3fca3741d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b247c7e3fca3741d",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88be01b3fdc81510",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88be01b3fdc81510",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c234b94a425640f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c234b94a425640f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a843d5b786d28f6c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a843d5b786d28f6c",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac6b2ce9306b5c29",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane?name=\\u00a0\\u00a0\\u00a0\\u00a0  \\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac6b2ce9306b5c29",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6c9b897747c951c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6c9b897747c951c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b54d171d308d96a0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b54d171d308d96a0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5a227a587d2ea57",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5a227a587d2ea57",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92af1f9c485e7c6a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"?\\u2026\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92af1f9c485e7c6a",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd11e0e1b38c672e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd11e0e1b38c672e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88caaac8e4f4af79",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88caaac8e4f4af79",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b76352219e728b34",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b76352219e728b34",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A9": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9391ba0d7a32874f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9391ba0d7a32874f",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9016a1e22a001bbb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9016a1e22a001bbb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-958f8ea2dd936099",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-958f8ea2dd936099",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9732ccf3dd9e630",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9732ccf3dd9e630",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a494dac086ba9151",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a494dac086ba9151",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b37ede99ec050363",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b37ede99ec050363",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-stork/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8620b4d7596a935b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8620b4d7596a935b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bca5a4c976315d12",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-181\\u00a0\\u00a0?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bca5a4c976315d12",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e1bc45a0b73b67c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e1bc45a0b73b67c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ccc9cd2f163c0f6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ccc9cd2f163c0f6",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8bac833079aa7cf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8bac833079aa7cf",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bcce630064fcd3a0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bcce630064fcd3a0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b08152aee4966c0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b08152aee4966c0",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa410100c6d06496",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa410100c6d06496",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-837b07eef4035cdc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \" +\\u00a0\\u00a0\\u00a0\\u00a0\\u2026\\u00a0\\u00a0......\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-837b07eef4035cdc",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b12d6ba491daf9e1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b12d6ba491daf9e1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a90011a295cdb0c7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a90011a295cdb0c7",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b3bd344c48dde1b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b3bd344c48dde1b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9097e6fc0918d26",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"\", \"phone\": \"??????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9097e6fc0918d26",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98351b446337c6ad",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98351b446337c6ad",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A10": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99a9e99afabdb770",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99a9e99afabdb770",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a92f6f4bee489a8a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Red%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a92f6f4bee489a8a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Red Bridge Pharmacy\", \"city\": \"Brookvale\", \"phone\": \"+1-555-9927\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b04e5cb5d32017bd",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9927\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b04e5cb5d32017bd",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8e0c274eb9a2f8e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8e0c274eb9a2f8e",
+   "content": "{\"task_id\": \"T2\", \"place\": \"River Anchor Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac45f87311583c72",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac45f87311583c72",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-83fb893abf66c4e3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-83fb893abf66c4e3",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-crane/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-stork/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84068f9fab1d0db2",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=River%20Anchor%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84068f9fab1d0db2",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Anchor Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-1811\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8dff5f608ea4f6f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1811\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8dff5f608ea4f6f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-808eafa1f0c8a838",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-808eafa1f0c8a838",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Silver Willow Cafe\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bcaf83108685a98c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Silver%20Willow%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bcaf83108685a98c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Silver Willow Cafe\", \"city\": \"Brookvale\", \"phone\": \"+1-555-6774\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b59ca513de9ade84",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b59ca513de9ade84",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a352cd0c9fef3fc2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6774\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a352cd0c9fef3fc2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9382ef64759b43bd",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9382ef64759b43bd",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Royal Anchor Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92e694e1851cb871",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Royal%20Anchor%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92e694e1851cb871",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Royal Anchor Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-7445\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b051bd3052a3ae6b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7445\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b051bd3052a3ae6b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b87763df7633b200",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b87763df7633b200",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f71e13fd84c8af5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f71e13fd84c8af5",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ba7df323ad3cc4e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \" +\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0?\\u00a0\\u00a0\\u00a0\\u00a0\\u2026\\u2026 \\u2026\\u00a0\\u00a0...\\u00a0... ...\\u00a0....\\u2026\\u00a0...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ba7df323ad3cc4e",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a528fa604d10080f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Sunny%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a528fa604d10080f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Anchor Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-2039\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-830f0ad5d3b3d487",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-2039\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-830f0ad5d3b3d487",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ]
+}

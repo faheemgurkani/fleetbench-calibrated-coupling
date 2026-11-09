@@ -1,0 +1,4172 @@
+{
+ "A1": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-83fa0add225e7eb1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-83fa0add225e7eb1",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e92bba38d08e9b5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e92bba38d08e9b5",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2a693b517042ae2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2a693b517042ae2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a5e9d5225ed6ea3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a5e9d5225ed6ea3",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8674616a2cc57037",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8674616a2cc57037",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afdaa2886666498d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afdaa2886666498d",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1d9e7a8c488bfba",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \" /svc-5????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1d9e7a8c488bfba",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3e1bb447d858cbf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3e1bb447d858cbf",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afab43106a82101a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afab43106a82101a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afdf5cb4537e7c1d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afdf5cb4537e7c1d",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a25e5a10c8cac7f9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a25e5a10c8cac7f9",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a217ae08677d596b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a217ae08677d596b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb0c0e69c8094b48",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-647??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb0c0e69c8094b48",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae697836df19b9cc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae697836df19b9cc",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f9eb4405da2c095",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f9eb4405da2c095",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0d32ee78c095d7f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0d32ee78c095d7f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b582e6d5f6aedee",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-5805\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b582e6d5f6aedee",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8cfb614f6775ba34",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8cfb614f6775ba34",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b942d6d84a650105",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b942d6d84a650105",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8aad52f3b3a6882b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8aad52f3b3a6882b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A2": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-909a44e6f835b507",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-909a44e6f835b507",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a348497739570d29",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a348497739570d29",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7f10d4bb7e532c1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7f10d4bb7e532c1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92b7cde93047f6b4",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92b7cde93047f6b4",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c4f5284eb728cde",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c4f5284eb728cde",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b369b72f935e0fb6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b369b72f935e0fb6",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8db143a75dd167cb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8db143a75dd167cb",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2a5e2ead50a21df",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2a5e2ead50a21df",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f11d6bb43352269",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f11d6bb43352269",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-903cff0ac00d52d6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-903cff0ac00d52d6",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab37e3d44d754656",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab37e3d44d754656",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-920aa3d25c984b9b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-920aa3d25c984b9b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9abfb8b9ea4a46c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9abfb8b9ea4a46c",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3554d88ffb181e7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3554d88ffb181e7",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa56a90b7ea3ae4b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-5805\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa56a90b7ea3ae4b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb7795d25f8031ca",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb7795d25f8031ca",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a27be9cb4e86d9e9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a27be9cb4e86d9e9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a612255879c6afe2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-...??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a612255879c6afe2",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5f0ff65461da9e7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5f0ff65461da9e7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b7750126dc7b43c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b7750126dc7b43c",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Falcon Bookshop\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A3": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9fe6d0deee23945c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9fe6d0deee23945c",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8e5d727ebc01288",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8e5d727ebc01288",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c7358278293d9c6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c7358278293d9c6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a35b3b4e5cf1028c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a35b3b4e5cf1028c",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86c51b05245462d9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86c51b05245462d9",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a6fc37b901efb544",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a6fc37b901efb544",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-915b05bc4d5c2d3b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-915b05bc4d5c2d3b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9dc12b2fedc1ef6e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9dc12b2fedc1ef6e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8bd2ece20a12f9ee",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8bd2ece20a12f9ee",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-811871b15d010d96",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-811871b15d010d96",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84f9954a9872e903",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84f9954a9872e903",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-900e09aa3cfebe13",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-900e09aa3cfebe13",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1f8f7619573c37d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1f8f7619573c37d",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4ab7b67a05542d1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4ab7b67a05542d1",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9b137eedec1fd33",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-5805\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9b137eedec1fd33",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87bcb66859440430",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87bcb66859440430",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d101f9eace33c95",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d101f9eace33c95",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8412d9316cfec002",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"_raw\": \"{\\\"task_id\\\": \\\"T5\\\", \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n \\n \\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n       \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n       \\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n  \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n  \\n\\n\\n\\n    \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n       \\n\\n  \\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n       \\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n \\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n \\n \\n\\n    \\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n      \\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n   \\n\\n\\n\\n\\n  \\n  \\n  \\n  \\n \\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n \\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n               \\n  \\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n    \\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n    \\n\\n \\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n           \\n               \\n               \\n               \\n              \\n\\n\\n\\n \\n               \\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n \\n\\n        \\n\\n \\n\\n\\n\\n                \\n\\n \\n\\n               \\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n\\n  \\n\\n\\n               \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n \\n \\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n \\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n   \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n \\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n \\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n  \\n \\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n  \\n\\n  \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n   \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n  \\n\\n\\n \\n\\n  \\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n                    \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n        \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n  \\n\\n\\n \\n\\n\\n\\n        \\n \\n \\n\\n \\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\\"phone\\\"\\n \\n  \\n \\n\\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n  \\t\\n\\n   \\n  \\n\\n  \\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n \\n  \\n \\n \\n\\n\\n\\n\\n \\n\\n\\n                  \\n      \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n                          \\n \\n\\n\\n \\n\\n\\n\\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n  \\n \\n \\n\\n  \\n\\n\\n\\n\\n \\n \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n                            \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n               \\n \\n\\n\\n\\n \\n                \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n  \\n\\n   \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n:\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n    \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n \\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n  \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n \\n  \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n  \\n\\n\\n\\n \\n \\n    \\n\\n \\n\\n\\n\\n \\n \\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n \\n\\n\\n\\n\\n \\n\\n  \\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n  \\n\\n \\n\\n\\n \\n \\n\\n  \\n\\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n   \"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8412d9316cfec002",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b21235456b18674f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b21235456b18674f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A4": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b69450aa93d6bff9",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b69450aa93d6bff9",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92ad8ef208703d9c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92ad8ef208703d9c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9558100f4030b777",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9558100f4030b777",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3e196bba54a8b49",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3e196bba54a8b49",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af0c497baad339c7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af0c497baad339c7",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8583906eaa3d8d3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8583906eaa3d8d3",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-82d8570fca07160a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-82d8570fca07160a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f5fb50e4115c9c4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f5fb50e4115c9c4",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-82949e594e3e4cc3",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-82949e594e3e4cc3",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9cf10e988acaa186",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9cf10e988acaa186",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-953a23dc06acf590",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-953a23dc06acf590",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b839fd17e327d76c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b839fd17e327d76c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d237160fb0485f6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d237160fb0485f6",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-884d37ec8cac1fb5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-884d37ec8cac1fb5",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-987ff0b60708ecd9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-5805\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-987ff0b60708ecd9",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a19ec535d55068f4",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a19ec535d55068f4",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b565de306182d1ce",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b565de306182d1ce",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98329cc28856abf8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-500...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98329cc28856abf8",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1d1021d89d00df5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1d1021d89d00df5",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A5": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1e397ac1a366113",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1e397ac1a366113",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-837db1f109bd8229",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-837db1f109bd8229",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b39c89cb2bbfce08",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b39c89cb2bbfce08",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8e50ca30c702924",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8e50ca30c702924",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99af752685b77802",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99af752685b77802",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9b82ae010670c33",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9b82ae010670c33",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2fa738be0ff1448",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2fa738be0ff1448",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab3a0b6775dc4d59",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab3a0b6775dc4d59",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a4411409dde129db",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a4411409dde129db",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6b162aa1b4712d1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6b162aa1b4712d1",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8a70e85e87bd0f6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8a70e85e87bd0f6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b968f54c75f31685",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b968f54c75f31685",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-899cd0a35810dac0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-899cd0a35810dac0",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a6013dc284c2c967",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a6013dc284c2c967",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8cc326db0b6a1517",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8cc326db0b6a1517",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9877a9ee6d3313e9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Garden%?20??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9877a9ee6d3313e9",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ef52145baf126c9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ef52145baf126c9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-807222d0f7bae35e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-807222d0f7bae35e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A6": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7a4df7f23691a5a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7a4df7f23691a5a",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88572b75743b6cb8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88572b75743b6cb8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8bc6d3d3c152f63",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8bc6d3d3c152f63",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6f7ce3446da2ce7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6f7ce3446da2ce7",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b24b7baf3d983ee6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b24b7baf3d983ee6",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a28dfc8ac160e9a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a28dfc8ac160e9a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac7aaadbe775f8bb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac7aaadbe775f8bb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be8b459d064da710",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7724????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be8b459d064da710",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a222f36b809d2dcf",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a222f36b809d2dcf",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7003dc964a56c28",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7003dc964a56c28",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5cf5b0ece463d5c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5cf5b0ece463d5c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue. Use one tool call."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab13347430d9ee00",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab13347430d9ee00",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8d25e199bc2cebd",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8d25e199bc2cebd",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "{\"task_id\":\"T4\",\"phone\":\"+1-555-5805\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue. Use one tool call."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88943a7cb81cca8d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88943a7cb81cca8d",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81338bcbc388e2be",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81338bcbc388e2be",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bdac0dc8609eb68a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bdac0dc8609eb68a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A7": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-831abf023609e80b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-831abf023609e80b",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a68aa5edc927f80c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a68aa5edc927f80c",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af4329dc1c99aa89",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af4329dc1c99aa89",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a53e80836cb8f68d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a53e80836cb8f68d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f8f72a01462649d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f8f72a01462649d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b09e7d5470333527",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b09e7d5470333527",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a46c2710271bd872",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a46c2710271bd872",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0ae639c7fb6cfdd",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0ae639c7fb6cfdd",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-851db20d0dbd75d7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-851db20d0dbd75d7",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a68a73e7ff7fa846",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple\\\");\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a68a73e7ff7fa846",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-980b0fefb2e90857",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-980b0fefb2e90857",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a02bac5a5d1c1394",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a02bac5a5d1c1394",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85674763a91d66b1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85674763a91d66b1",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9af2dba394cb97c4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9af2dba394cb97c4",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0187b613ccd36ba",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-5805\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0187b613ccd36ba",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d03020444bef0ba",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d03020444bef0ba",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-867c164fb42ebbbb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-867c164fb42ebbbb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A8": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bfbbef772bd599e1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bfbbef772bd599e1",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f8bb835f4b55aa7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f8bb835f4b55aa7",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8beed1e04473bbf5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8beed1e04473bbf5",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d7a546ebae5a317",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d7a546ebae5a317",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9561e1d1673bc0f2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9561e1d1673bc0f2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa64b3146218bd71",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa64b3146218bd71",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8e2519af74774a7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8e2519af74774a7",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b13f6ae65a1586c2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b13f6ae65a1586c2",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b22baeffb98ebe90",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b22baeffb98ebe90",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3a8490f3f273e42",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3a8490f3f273e42",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-901d5624bfd2ff4c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-901d5624bfd2ff4c",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c805558b10af63b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c805558b10af63b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bad3a655d348b7cc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bad3a655d348b7cc",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-868085a8d7f1184e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-868085a8d7f1184e",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-abcad52cf6e38645",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-abcad52cf6e38645",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d440e79b63a22e9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d440e79b63a22e9",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90ccb830694080f8",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90ccb830694080f8",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Falcon Bookshop\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A9": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97a2d59025cb4532",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97a2d59025cb4532",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf556da444c311a6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf556da444c311a6",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a4d20a75d65be66a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a4d20a75d65be66a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9bcec14806b68b60",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9bcec14806b68b60",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a819db5f0d08d07e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a819db5f0d08d07e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8996b60fb60e1ff4",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8996b60fb60e1ff4",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b73eebab8e190a2d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b73eebab8e190a2d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a28f425ac1410a0d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a28f425ac1410a0d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-886a9075dae79880",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-886a9075dae79880",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a55746ddddcd5c34",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a55746ddddcd5c34",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d9a72c64c3f2ddb",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d9a72c64c3f2ddb",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84195fe6f6e27787",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84195fe6f6e27787",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a007e78c556c4d81",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a007e78c556c4d81",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-5805\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c825f99bfb416da",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-5805\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c825f99bfb416da",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a838d345590bc10",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a838d345590bc10",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac7f80057bfd25ec",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac7f80057bfd25ec",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A10": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-acfa3842cb9018e3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-acfa3842cb9018e3",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-962eef7fd3072d95",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-962eef7fd3072d95",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e15b12b455dd08a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e15b12b455dd08a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-ibis/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-929fdec90fa5f38d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-929fdec90fa5f38d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8393\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8b362d0df23f337",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-8393\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8b362d0df23f337",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a64803af3401f897",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a64803af3401f897",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Old Bridge Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-83f1f16dec810b8f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Old%20Bridge%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-83f1f16dec810b8f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Bridge Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-7728\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b649680bc8552069",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-7728\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b649680bc8552069",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b264f303aa6a2c36",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b264f303aa6a2c36",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1720967a4814e3b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1720967a4814e3b",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Old Lantern Cafe\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90db638923583e3d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Maple%20Bridge%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90db638923583e3d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Bridge Pharmacy\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-6472\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a05741ad6048ac49",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-6472\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a05741ad6048ac49",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a98dc88695ca7e4d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a98dc88695ca7e4d",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aff11ef46357e0a9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-ibis/lookup?name=Cedar%20Garden%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aff11ef46357e0a9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Garden Clinic\", \"city\": \"Fairhaven\", \"phone\": \"+1-555-4850\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0c0436f0ed249b0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4850\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0c0436f0ed249b0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b88236dee9ac5d7b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b88236dee9ac5d7b",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Iron Falcon Bookshop\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ]
+}

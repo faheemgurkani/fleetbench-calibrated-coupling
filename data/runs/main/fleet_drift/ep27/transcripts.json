@@ -1,0 +1,4662 @@
+{
+ "A1": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa8bf69f7e74362e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa8bf69f7e74362e",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a66611c290ac5a27",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a66611c290ac5a27",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad25014ed3c175d4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad25014ed3c175d4",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad94c16a38f5c2fc",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad94c16a38f5c2fc",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf17dc1e4158b77b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf17dc1e4158b77b",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8908fc3ecc99e6b1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8908fc3ecc99e6b1",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d619a748d5d7b39",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d619a748d5d7b39",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-867292cac7dbedec",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \" +\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-867292cac7dbedec",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9be5ca8210edbc9f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9be5ca8210edbc9f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7c6aee342ef271b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7c6aee342ef271b",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5eae00098402281",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5eae00098402281",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98ae3b2775e27538",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-255?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98ae3b2775e27538",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ae6dc11d277a2bc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ae6dc11d277a2bc",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aed2d9333e723e2e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aed2d9333e723e2e",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9345331295ecc74",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9345331295ecc74",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-899410fe14a9afc3",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-899410fe14a9afc3",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a762168a93501e9a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a762168a93501e9a",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a83fb588c70f2a8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a83fb588c70f2a8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c4bf3dca3969edc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c4bf3dca3969edc",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a34e3d3b4356ac1e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a34e3d3b4356ac1e",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A2": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c03933eae1c2264",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c03933eae1c2264",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ba11124207edc5af",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ba11124207edc5af",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a526dfedb24d161f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a526dfedb24d161f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aaada9400480cb74",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aaada9400480cb74",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ed3e4d0f09614de",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ed3e4d0f09614de",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99a2793cd35cc3d0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99a2793cd35cc3d0",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb203cdc3009f6f1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb203cdc3009f6f1",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-928f7026c6927ab7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-928f7026c6927ab7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d675d68396a5549",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d675d68396a5549",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1ddaeae53df6694",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1ddaeae53df6694",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87428163b799565a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87428163b799565a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8900ec586b7c584c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8900ec586b7c584c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac4bab4718143280",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac4bab4718143280",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b10175318bbdb878",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b10175318bbdb878",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b37dff9aa685c4ff",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b37dff9aa685c4ff",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-839c08c147e6781c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-839c08c147e6781c",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81944428f93d81f8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81944428f93d81f8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8524cbbdfede7cb",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-497\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8524cbbdfede7cb",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b52aec90765c7787",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b52aec90765c7787",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bdc50573c45187ac",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bdc50573c45187ac",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A3": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad7342f27c411d75",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad7342f27c411d75",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c782e7f1f5a6bf3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c782e7f1f5a6bf3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90b833d0ea5783b4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \" +\\u00a0\\u00a0\\u00a0???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90b833d0ea5783b4",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a517f55669a8d96",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a517f55669a8d96",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aaed3d234dc3c6dc",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aaed3d234dc3c6dc",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a219e2a22a1c1851",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a219e2a22a1c1851",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0c4f9d02994a377",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0c4f9d02994a377",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94231d7b36a724e5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94231d7b36a724e5",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-947fc6e527eced2e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1505?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-947fc6e527eced2e",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b76ec0990bb740f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b76ec0990bb740f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1d2d2258ca8ef49",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1d2d2258ca8ef49",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9e2cd8d594f4e14",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"\\u00a0\\u00a0\\u00a0  \\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u2026\\u00a0\\u00a0\\u00a0\\u00a0???\\u00a0\\u00a0?\\u00a0\\u2026\\u00a0... ... ...\\u00a0\\u00a0\\u00a0\\u00a0\\u2026 \\u2026\\u00a0\\u00a0\\u00a0???\\u00a0\\u00a0\\u2026\\u00a0\\u2026\\u00a0???\\u00a0\\u00a0\\u2026\\u00a0\\u00a0?\\u00a0**\\u00a0\\u00a0???\\u00a0..\\u00a0\\u00a0\\u2026.\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9e2cd8d594f4e14",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2c782ffecd37aa3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2c782ffecd37aa3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8bdbbfe88e0f5a90",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8bdbbfe88e0f5a90",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e07b71ef386a4cb",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e07b71ef386a4cb",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac226ecfa5080853",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20%C3%82%C...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac226ecfa5080853",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0784a1d1ec984b1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0784a1d1ec984b1",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8795cdc90c60792a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8795cdc90c60792a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93b7664a037dc914",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93b7664a037dc914",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2def1a6aaf096ca",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2def1a6aaf096ca",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A4": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8859820d90ca5345",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8859820d90ca5345",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8ea3d2d89fd1bba",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8ea3d2d89fd1bba",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-807eb9001ab16945",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-807eb9001ab16945",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a48c03d6b9814518",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a48c03d6b9814518",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b61424b760eb298d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b61424b760eb298d",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-841429fe883329b5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-841429fe883329b5",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-819f47556ebc4c13",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-819f47556ebc4c13",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bbbad81c8a9907e5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bbbad81c8a9907e5",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e46e7d69321e6f4",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e46e7d69321e6f4",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c68002cae2157cc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c68002cae2157cc",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9dc5daea6ab9c69b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9dc5daea6ab9c69b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a9d704bc1976095",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a9d704bc1976095",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95e0cc1867cfe17a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95e0cc1867cfe17a",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0f93136d783d4df",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0f93136d783d4df",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2563719f3fba78c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2563719f3fba78c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89023f9f658f5c32",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89023f9f658f5c32",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8fc12ba7a9860bc1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8fc12ba7a9860bc1",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a433bf5ba279ca1b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a433bf5ba279ca1b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0b8c8fbc57eb7b6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-497...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0b8c8fbc57eb7b6",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-925f920b7c4d3c63",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-925f920b7c4d3c63",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A5": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf3e9ebf9dc031a5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf3e9ebf9dc031a5",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a92677626a58ae0b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a92677626a58ae0b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7d4cc1570a66785",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9295?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7d4cc1570a66785",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb508cc8135584c6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb508cc8135584c6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8abac83f406a47e3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8abac83f406a47e3",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86de017ca7713c36",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86de017ca7713c36",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bad3114202661471",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bad3114202661471",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8315fe7c86a75061",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8315fe7c86a75061",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d9f91e1a8d5623b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d9f91e1a8d5623b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac6a5bbbc68b4644",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac6a5bbbc68b4644",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c2233b6293166f1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c2233b6293166f1",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-989b06d1d6e630f7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-989b06d1d6e630f7",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bb887d4b54d1bf93",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bb887d4b54d1bf93",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a788267fb9c5b679",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a788267fb9c5b679",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7faab0aafae5941",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7faab0aafae5941",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-867f0116bdf39bb7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-867f0116bdf39bb7",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1b0dfcc580b375d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1b0dfcc580b375d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9e6ce0a004e9615",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9e6ce0a004e9615",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b958e4c004354be7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b958e4c004354be7",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88b0f66703242a18",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88b0f66703242a18",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A6": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf25f27e9007bee4",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf25f27e9007bee4",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f51929d4f037b75",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f51929d4f037b75",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2c4928a9c999755",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2c4928a9c999755",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85d1c02c094c188c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85d1c02c094c188c",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81d21d23543bb096",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81d21d23543bb096",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-834dd670193183e9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-834dd670193183e9",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81ab695dd1c0302f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81ab695dd1c0302f",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-974f941ec0a5d9e0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-974f941ec0a5d9e0",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac6cf0a18b771a93",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \" +\\u00a0\\u00a0\\u00a0??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac6cf0a18b771a93",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a77aeb8cf898d7f9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a77aeb8cf898d7f9",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b843fac12bb8dc81",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b843fac12bb8dc81",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc54198d2462fc0f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc54198d2462fc0f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b748ac902bcd2eb8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b748ac902bcd2eb8",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3d24fabc07a267b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3d24fabc07a267b",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8224b3992dcc1f6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8224b3992dcc1f6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-910b60f493ba9622",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-910b60f493ba9622",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bda322d70442afb5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bda322d70442afb5",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96443f012e7c224e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96443f012e7c224e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e07d4d9aea4f7b6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e07d4d9aea4f7b6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-906eedf2b73bff6a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-906eedf2b73bff6a",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A7": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a619c29d0b7152fb",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a619c29d0b7152fb",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89d922508955154e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89d922508955154e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b47fda5368a0d1f6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b47fda5368a0d1f6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9c9046809897aa9",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9c9046809897aa9",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-acccef9b759e9415",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-acccef9b759e9415",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd4a471bd1a4ce1d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd4a471bd1a4ce1d",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc283bd3121c063b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc283bd3121c063b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aadbbc84c4580661",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-150...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aadbbc84c4580661",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac073eb0bf57d5a7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac073eb0bf57d5a7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8048f83e8aed539f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8048f83e8aed539f",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-908eb8cee7530bd6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-908eb8cee7530bd6",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95423ef48b77719d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95423ef48b77719d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5a1fd28f7f216d0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"...\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5a1fd28f7f216d0",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2b19f6cb4ee3cce",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2b19f6cb4ee3cce",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2658375d726260e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2658375d726260e",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc1fbbe12468654f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc1fbbe12468654f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b45f3b108f79bf22",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b45f3b108f79bf22",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9041f424babec0b8",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9041f424babec0b8",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f7857ab5f956b95",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f7857ab5f956b95",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a568d73a5964e902",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a568d73a5964e902",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A8": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ba3e1e4f392bf82",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ba3e1e4f392bf82",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-966a7604e626e141",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-966a7604e626e141",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f4fbc9a8f9eba43",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f4fbc9a8f9eba43",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c54e943314d9e73",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c54e943314d9e73",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab80a842b79cc973",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab80a842b79cc973",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a917965b3571b8b3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a917965b3571b8b3",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b52f061fcd97518",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b52f061fcd97518",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-accb69964da17520",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-accb69964da17520",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab6343996653baf1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab6343996653baf1",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e7eebdb5819806d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e7eebdb5819806d",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b99d3f4d006c665d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b99d3f4d006c665d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a87fd9cb2fbe10a4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a87fd9cb2fbe10a4",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9bb77e57c83685b0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9bb77e57c83685b0",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b805282b74154163",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b805282b74154163",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b01a46b94e421db2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b01a46b94e421db2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ada9368d0986ee7f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ada9368d0986ee7f",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a6218de597acee30",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a6218de597acee30",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e430fd3e7fad0d4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e430fd3e7fad0d4",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8a9ca752490c615",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8a9ca752490c615",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9356ca570de7fdc8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9356ca570de7fdc8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Calderport\", \"phone\": \"+1-555-3436\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A9": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84c1dee01240f1d4",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84c1dee01240f1d4",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b91d0056a2a84f30",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b91d0056a2a84f30",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8046aebcc1428ec1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8046aebcc1428ec1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9c3c12fd1274c08",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9c3c12fd1274c08",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-811c0b7cef81449d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-811c0b7cef81449d",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92c962b4b7bf6b7e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92c962b4b7bf6b7e",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91e1eff5c3d1dbfc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91e1eff5c3d1dbfc",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-934b8928fd02a3d1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1500\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-934b8928fd02a3d1",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90993d01e5308a64",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90993d01e5308a64",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a225c82004903c1f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a225c82004903c1f",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bafa6a7f66620262",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bafa6a7f66620262",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1be29e05e5675c7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber\\u00a0????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1be29e05e5675c7",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-939acb6b3b44ffd8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-939acb6b3b44ffd8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b906439fb21ddf74",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b906439fb21ddf74",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b83b74325657b830",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b83b74325657b830",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab73920e59e13db1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab73920e59e13db1",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a520662da62faee7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a520662da62faee7",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b961047e30abdf66",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b961047e30abdf66",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae735aa4f52c3e6f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae735aa4f52c3e6f",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92fe89530f829060",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92fe89530f829060",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A10": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-837c30fce75c3bde",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-837c30fce75c3bde",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bbe6569958c9664a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Anchor%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bbe6569958c9664a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Anchor Bakery\", \"city\": \"Calderport\", \"phone\": \"+1-555-9296\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9217ff4044fdbff1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9296\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9217ff4044fdbff1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9bc95af15af9e49c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9bc95af15af9e49c",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1287127733792fc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1287127733792fc",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94f4a8d80add9235",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94f4a8d80add9235",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-linnet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a18915bbfea195f0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Golden%20Meadow%20Bookshop\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a18915bbfea195f0",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Golden Meadow Bookshop\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1508\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b73cf051ebf0fa21",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-1508\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b73cf051ebf0fa21",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b7e04cba62087bc",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b7e04cba62087bc",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-904ca9d381a35333",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Amber%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-904ca9d381a35333",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Falcon Clinic\", \"city\": \"Brookvale\", \"phone\": \"+1-555-7275\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf1fc9ddc9def52a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf1fc9ddc9def52a",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1c4de8b9743c372",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-7275\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1c4de8b9743c372",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a01c2875fc722a49",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a01c2875fc722a49",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f282bab31909db4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=Hidden%20Lantern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f282bab31909db4",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Hidden Lantern Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8742\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b1b715af1c57865",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-8742\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b1b715af1c57865",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b2af34b41b43315",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b2af34b41b43315",
+   "content": "{\"task_id\": \"T5\", \"place\": \"River Meadow Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7fba25354e7cda6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-linnet/lookup?name=River%20Meadow%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7fba25354e7cda6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"River Meadow Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-4973\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afe4712e01cdc758",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-497...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afe4712e01cdc758",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a3b5e13d53f69ba",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-4973\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a3b5e13d53f69ba",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-82d8d0431a5057b3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-82d8d0431a5057b3",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ]
+}

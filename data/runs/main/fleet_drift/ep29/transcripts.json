@@ -1,0 +1,4662 @@
+{
+ "A1": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc28ec83e3557acf",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc28ec83e3557acf",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a85b857e97a33c62",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a85b857e97a33c62",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f8384f2f13c8022",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f8384f2f13c8022",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9dd322c8e83e86ae",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9dd322c8e83e86ae",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9cfabda9201b319d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9cfabda9201b319d",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9da389944925bc2b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9da389944925bc2b",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a324d4eadad5b207",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a324d4eadad5b207",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-833ad89c128f7d12",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-833ad89c128f7d12",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b56b197f001cb48c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b56b197f001cb48c",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f707e4c37b864c5",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f707e4c37b864c5",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bffe80527daab162",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bffe80527daab162",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b6d51a798ecef7f2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b6d51a798ecef7f2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-adfda1c1b889132e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-adfda1c1b889132e",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ac73b095ca8bf0c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ac73b095ca8bf0c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99211fe8fb3a0aa6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99211fe8fb3a0aa6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e45d5372a542afb",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e45d5372a542afb",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8c3c4785ac8d52d2",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8c3c4785ac8d52d2",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9020394f599bbd55",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \" +\\u00a0\\u00a0??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9020394f599bbd55",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd47c70dc6cd4853",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd47c70dc6cd4853",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2bc10bc6fbd61ff",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2bc10bc6fbd61ff",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A2": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89c55dfde8a19657",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89c55dfde8a19657",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0e3aaef9ec3bb90",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0e3aaef9ec3bb90",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab6c9af5d71a1a46",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab6c9af5d71a1a46",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b743e573d00946d3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b743e573d00946d3",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7242d94c8e586d6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7242d94c8e586d6",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88bb8efa3884f716",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88bb8efa3884f716",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aec30eadc1c9047e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aec30eadc1c9047e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b5b3875dcc896dbf",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8080?????????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b5b3875dcc896dbf",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bae97c2b64164c9e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bae97c2b64164c9e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8267912d5eb31fc2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8267912d5eb31fc2",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a1776e4181d14f3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a1776e4181d14f3",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ba39b6e6551b72eb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ba39b6e6551b72eb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bde6b04cdd199416",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-123-456-...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bde6b04cdd199416",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7b0eda1e680ae9e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7b0eda1e680ae9e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8945f86c23188d40",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8945f86c23188d40",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a29368a7200839ba",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a29368a7200839ba",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4d47cdfd5cb666a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4d47cdfd5cb666a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad983219565a65c6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad983219565a65c6",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab2c4e6308141e20",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab2c4e6308141e20",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-83f1dfed1addb33e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-83f1dfed1addb33e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A3": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab55febeb61996e3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab55febeb61996e3",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8645cd97d9ca338c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8645cd97d9ca338c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87766444201c4a65",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87766444201c4a65",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d8e879ab7e01be2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d8e879ab7e01be2",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f76886df1730195",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon\\u00a0\\u00a0????\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f76886df1730195",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b1bcac64fb7e684",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b1bcac64fb7e684",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97345bbf554936aa",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97345bbf554936aa",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0c03d838fce94ba",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0c03d838fce94ba",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-972debb0ca8f3b2f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-972debb0ca8f3b2f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f074034b7ec3b8b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f074034b7ec3b8b",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-827f29ad0505babf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-827f29ad0505babf",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b80f5622a55eb5cb",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b80f5622a55eb5cb",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b1d9d1b07d357e37",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b1d9d1b07d357e37",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7ef8b671e3ad258",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7ef8b671e3ad258",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a07f4bb36e87f270",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-712??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a07f4bb36e87f270",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8902ecce9701783e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8902ecce9701783e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9232412e63f8a9b6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9232412e63f8a9b6",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8589dbcb7b8d7e77",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8589dbcb7b8d7e77",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8385d62646edb9d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8385d62646edb9d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9903d620010445eb",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9903d620010445eb",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Cedar Harbor Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A4": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-875c2a40f2df5413",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-875c2a40f2df5413",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d891ae5f79ad854",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d891ae5f79ad854",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8af08406a021d6f5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8af08406a021d6f5",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8e42da0204070a1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8e42da0204070a1",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e8b760e619ddd85",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e8b760e619ddd85",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a31c3c4279ad19ad",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a31c3c4279ad19ad",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88292d78de657bfc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88292d78de657bfc",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab391d519ed484d9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab391d519ed484d9",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8db20c5268879c2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8db20c5268879c2",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91b5fee11fea66e4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91b5fee11fea66e4",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94a97ea10b2eb11d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94a97ea10b2eb11d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3a7489a8348a760",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3a7489a8348a760",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f26747201dd50e7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f26747201dd50e7",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88fb747469290a11",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88fb747469290a11",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a9b37b624c60358",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a9b37b624c60358",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9107ac48eb5033d6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-226?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9107ac48eb5033d6",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87116ffc493031be",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87116ffc493031be",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a78f03910f4566db",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a78f03910f4566db",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b85b40bca21b124a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b85b40bca21b124a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-acb8c7b43b44876a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-acb8c7b43b44876a",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A5": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9512eb3a083efb3a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9512eb3a083efb3a",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95d9ae2d41f92d5c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95d9ae2d41f92d5c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-80daec3b35938cb4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-80daec3b35938cb4",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd195ac217181bb1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd195ac217181bb1",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-863c2bf66986384f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-863c2bf66986384f",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac03e8f8b3c08136",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac03e8f8b3c08136",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84e61bf1653cd1f3",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84e61bf1653cd1f3",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f1ddb51e774fadc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f1ddb51e774fadc",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-823dc52fb46f97c2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-823dc52fb46f97c2",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93b99bac62f55639",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93b99bac62f55639",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b49e27490b246149",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b49e27490b246149",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b71962b1c5e02dba",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b71962b1c5e02dba",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93f0af9eb8810f95",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93f0af9eb8810f95",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a22cea245e43289b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a22cea245e43289b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5103d05b49609db",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5103d05b49609db",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8af77ff13a5a3f57",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8af77ff13a5a3f57",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9e39adebc17abb7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9e39adebc17abb7",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89d95f3394aabcb1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89d95f3394aabcb1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d2f7b03c6fc3633",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d2f7b03c6fc3633",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Cedar Harbor Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97ea6fc955a33528",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Cedar%20Harbor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97ea6fc955a33528",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Cedar Harbor Clinic\", \"city\": \"Elmstead\", \"phone\": \"+1-555-3400\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A6": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3e5306389e8c881",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3e5306389e8c881",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd2d4b510b658d63",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd2d4b510b658d63",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-936b4c17aa63e208",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-936b4c17aa63e208",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-949bf7891bdf24a5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-949bf7891bdf24a5",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd9e9f94a07528de",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd9e9f94a07528de",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab7222d9d55d8272",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab7222d9d55d8272",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8be88ea48235aa27",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8be88ea48235aa27",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ac39c7a2994f63d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ac39c7a2994f63d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e0b0886b5457925",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e0b0886b5457925",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f1816ed498ca557",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f1816ed498ca557",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afbf9554709b398c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afbf9554709b398c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8744b5829ba105a6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8744b5829ba105a6",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87dca1452201288f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87dca1452201288f",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b27ea09ed0264693",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b27ea09ed0264693",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b563c518e67e3c45",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b563c518e67e3c45",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90a0de967d542f1c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90a0de967d542f1c",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b0b00302ad4597e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b0b00302ad4597e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93366b5656bef2c6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93366b5656bef2c6",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a353d14c547f84d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a353d14c547f84d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-931373dc0b89b971",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-931373dc0b89b971",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Cedar Harbor Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A7": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b61745111946f53f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b61745111946f53f",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a64255b66709e023",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a64255b66709e023",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9848f1a3bffbec22",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \" +\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9848f1a3bffbec22",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9009985d82a1c469",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9009985d82a1c469",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3ac31cce7ff4662",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3ac31cce7ff4662",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc9053b180352400",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc9053b180352400",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8bcc222198839bbc",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8bcc222198839bbc",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0fd37b7645601bf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0fd37b7645601bf",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-866eab62619a5d51",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-866eab62619a5d51",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ba4bbbed98a6a733",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ba4bbbed98a6a733",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-861d7cf7d48e4b5f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-861d7cf7d48e4b5f",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b04d1fa5d99d809e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b04d1fa5d99d809e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa8f14484179b456",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa8f14484179b456",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a187b6acece54d9f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a187b6acece54d9f",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8fa2d093fb01c25f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8fa2d093fb01c25f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91f55429780eba68",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91f55429780eba68",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b5b12a61960101ad",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b5b12a61960101ad",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bdc64c69494cece6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bdc64c69494cece6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9e9b7675d3b155b6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8750\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9e9b7675d3b155b6",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3b32e9b38e95307",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3b32e9b38e95307",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A8": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8b345a0df8ce372e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8b345a0df8ce372e",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8353d8e2ad21c67a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8353d8e2ad21c67a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8521bcc4dd924273",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8521bcc4dd924273",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85c2d143bcf5afd5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85c2d143bcf5afd5",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89789080542acc1b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89789080542acc1b",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-acdcbc4924aa4a91",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-acdcbc4924aa4a91",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be8638e6dc367a3f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be8638e6dc367a3f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a68a2fa475aa37aa",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a68a2fa475aa37aa",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-913fd4a489ffe7ff",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-913fd4a489ffe7ff",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b617dfabf8ad9ae",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b617dfabf8ad9ae",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa7be915cea03d80",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa7be915cea03d80",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa31c3c0d83f03b2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa31c3c0d83f03b2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd3a149c9046e5d1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd3a149c9046e5d1",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9781cba6d7b1d828",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9781cba6d7b1d828",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a110a96c9c5a5fec",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a110a96c9c5a5fec",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a656026d3fd9ce60",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a656026d3fd9ce60",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a8d5385018776267",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a8d5385018776267",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a54977b39dfd22a5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a54977b39dfd22a5",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92a9c4b16b17ae01",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92a9c4b16b17ae01",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-859229456bf7e043",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-859229456bf7e043",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Cedar Harbor Clinic\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A9": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2394f05beac411f",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2394f05beac411f",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-968f8723cf79e3d7",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-968f8723cf79e3d7",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a5833c82b8aab7d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a5833c82b8aab7d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93ebf69c23eb653b",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93ebf69c23eb653b",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ea8347e3c896223",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ea8347e3c896223",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97334d839a102886",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97334d839a102886",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8984de66a8c2540f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8984de66a8c2540f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4f780b160978f82",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4f780b160978f82",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ac3acef8a3256ce",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ac3acef8a3256ce",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bce2f87e52b4792c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bce2f87e52b4792c",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89eedcac945b54a4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89eedcac945b54a4",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91f10a83235c791c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91f10a83235c791c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0ca6b506bd1d806",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0ca6b506bd1d806",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a8a696e11d40ad6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a8a696e11d40ad6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95e3bead4653c9a7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95e3bead4653c9a7",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-813d04b6e8c50be8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-813d04b6e8c50be8",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f2417089910232c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f2417089910232c",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8adf3b917816b76d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8adf3b917816b76d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b61c58ae0ad5243c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-875...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b61c58ae0ad5243c",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88a82af784a7dc07",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88a82af784a7dc07",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A10": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2a2e36e4a5db2c6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2a2e36e4a5db2c6",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Green Falcon Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bf63d21ca2d794e8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Green%20Falcon%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bf63d21ca2d794e8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Green Falcon Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-5074\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86ca63473469ae97",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-5074\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86ca63473469ae97",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a6f76c4035013cf6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a6f76c4035013cf6",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-954f89eda3b5e930",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-954f89eda3b5e930",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7fdb4c36533426e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7fdb4c36533426e",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternative for your account: /svc-kestrel/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af544eb41be03e94",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Iron%20Falcon%20Bakery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af544eb41be03e94",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Falcon Bakery\", \"city\": \"Elmstead\", \"phone\": \"+1-555-8078\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9960bf182082c2ed",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-8078\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9960bf182082c2ed",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f870f50a48f8737",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f870f50a48f8737",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f2e4f3f0a01fa51",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f2e4f3f0a01fa51",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afe6dacb6e5a3830",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-kestrel/lookup?name=Old%20Meadow%20Pharmacy\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afe6dacb6e5a3830",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Old Meadow Pharmacy\", \"city\": \"Avonford\", \"phone\": \"+1-555-9967\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9bac7821f1fdbaaa",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9967\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9bac7821f1fdbaaa",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa49c67f3e334769",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa49c67f3e334769",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Sunny Falcon Library\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-978b817f70c8f21a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Sunny%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-978b817f70c8f21a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Sunny Falcon Library\", \"city\": \"Calderport\", \"phone\": \"+1-555-7102\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b017973dca9d7bef",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-7102\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b017973dca9d7bef",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f1f0694a2a18c30",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f1f0694a2a18c30",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Amber Fern Cafe\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-accab346d6dd39f8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber\\u00a0??\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-accab346d6dd39f8",
+   "content": "{\"status\": 404, \"error\": \"no such place\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8abbe8dc1f75d9e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Amber%20Fern%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8abbe8dc1f75d9e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Amber Fern Cafe\", \"city\": \"Dunmore\", \"phone\": \"+1-555-8755\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a62b802e0a61e97a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"\\u00a0\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a62b802e0a61e97a",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd951c6c5141495f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-8755\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd951c6c5141495f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ]
+}

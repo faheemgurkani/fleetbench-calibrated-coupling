@@ -1,0 +1,4662 @@
+{
+ "A1": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be097d0176318d54",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be097d0176318d54",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a42cc5e9357c19bb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a42cc5e9357c19bb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-85054af2eeb43d9e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-85054af2eeb43d9e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f8b773a05bcb02d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f8b773a05bcb02d",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9358621f6b588abf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9358621f6b588abf",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b11decc5cc81682a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b11decc5cc81682a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-crane/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ba5bbf85b5b8b49d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ba5bbf85b5b8b49d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8940d93aceb2413c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \" +...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8940d93aceb2413c",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9884b0971132f2c4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9884b0971132f2c4",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9b39a975aa880df",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9b39a975aa880df",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84aaee130820224f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84aaee130820224f",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d5752510fca80f8",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-912???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d5752510fca80f8",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95dac147b2c9ba40",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9164\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95dac147b2c9ba40",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-804c84d69ca26903",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-804c84d69ca26903",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a06116e05dc2b411",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a06116e05dc2b411",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a80eb9334f351b2a",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3000\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a80eb9334f351b2a",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-813eafbe2ca1a966",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-813eafbe2ca1a966",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-acba35ecf79df3a5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-acba35ecf79df3a5",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2c999847dea49c0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane?name=...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2c999847dea49c0",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be6e8281963082eb",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be6e8281963082eb",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A2": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a638704d548d4ccf",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a638704d548d4ccf",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-965701dab99a3ec6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-965701dab99a3ec6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95cdc0ed97b87c2e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95cdc0ed97b87c2e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3ebd4658fcdb882",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3ebd4658fcdb882",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-82e3445f93e71873",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-82e3445f93e71873",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86218f51796d69d6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86218f51796d69d6",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-stork/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bbed11e49c87d8d9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bbed11e49c87d8d9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a892fd90c7f04eb4",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-377...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a892fd90c7f04eb4",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-837c02834b2fec7e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-837c02834b2fec7e",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9261f7c498a5a3cb",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9261f7c498a5a3cb",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b512688ed0e80eff",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b512688ed0e80eff",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99ecad3664aa31b8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99ecad3664aa31b8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-904681df2a44d6a0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"_raw\": \"{\\\"task_id\\\": \\\"T3,\\\"\\n\\n  \\n\\n  \\n\\n\\n\\n \\n  \\n\\n \\n \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n\\n \\n \\n\\n \\n \\n\\n  \\n  \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n \\n\\n \\n \\n \\n\\n\\n \\n\\n\\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n \\n \\n\\n \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n       \\n\\n\\n\\n \\n   \\n\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n   \\n\\n\\n\\n \\n\\n\\n\\n \\n\\n  \\n\\n \\n\\n\\n \\n \\n\\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n \\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n \\n \\n\\n        \\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n   \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n        \\n \\n\\n \\n\\n\\n \\n\\n     \\n\\n\\n\\n \\n \\n\\n \\n\\n        \\n\\n\\n                \\n\\n \\n\\n \\n\\n\\n \\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n  \\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n \\n\\n, \\\"phone\\\":\\\"???\\\" \\n\\n\\n\\n\\n\\n  \\n  \\n  \\n\\n  \\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n    \\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n  \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n \\n\\n  \\n\\n            \\n \\n\\n\\n\\n\\n\\n   \\n\\n\\n\\n\\n\\n  \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n \\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n   \\n\\n\\n\\n\\n\\n  \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n  \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n   \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n  \\n\\n\\n\\n \\n \\n\\n \\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n  \\n\\n \\n\\n \\n\\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n\\r\\n  \\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\r\\n\\r\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\r\\n \\n\\n \\n \\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n               \\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\r\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\r\\n\\r\\n\\r\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n  \\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n  \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n  \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\r\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\r\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\r\\n \\n\\n\\n\\n\\n\\n                                          \\r\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\r\\n\\r\\n\\n \\n\\n \\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n  \\n\\n \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\r\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n   \\n\\n  \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n    \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n  \\n\\n\\n\\n\\n  \\n\\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\t\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n                  \\n \\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\r\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n \\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n \\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n \\n\\n  \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\r\\n \\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\r\\n \\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\r\\n \\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n       \\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n                       \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\r\\n \\n \\n\\n \\n \\n\\n\\n\\n\\n \\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\r\\n\\r\\n  \\n\\n  \\n \\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n                                                                                                                                                                                               \\n\\n\\n\\n   \\n  \\n\\n\\n\\n\\n \\n\\n  \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n                   \\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n    \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n  \\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n \\n\\n\\n\\n\\n\\n \\n\\n  \\n \\n\\n\\n\\n\\n\\n \\n\\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\r\\n                   \\n                              \\r\\n                                                                                                                                \\r\\n  \\n\\n\\n\\n \\n\\n\\n\\n\\n\\n  \\n\\n\\n\\n  \\n \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n    \\n\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-904681df2a44d6a0",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d3d5aaea91ddbda",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9164\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d3d5aaea91ddbda",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-86aee8ba3f38dfb2",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-86aee8ba3f38dfb2",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a071883281d48ec8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a071883281d48ec8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81fd55c4ccbc5c5b",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81fd55c4ccbc5c5b",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b76460ca38a76a69",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b76460ca38a76a69",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90803af5d225d36c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90803af5d225d36c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-90f0c54038dafee7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-90f0c54038dafee7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A3": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-82f73f7ab5d91376",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-82f73f7ab5d91376",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d6bdded9f48960d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d6bdded9f48960d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a8e530002075401",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a8e530002075401",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8198a4bc929d1ad0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8198a4bc929d1ad0",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac5caffa26865427",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac5caffa26865427",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9950a6cc4329411e",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9950a6cc4329411e",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-crane/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7c5667bd85df122",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7c5667bd85df122",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b399b25e18aae0cf",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b399b25e18aae0cf",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9deabc527f613a0d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9deabc527f613a0d",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b35371c8f4282cff",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b35371c8f4282cff",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97faa852ad8de060",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9164\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97faa852ad8de060",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b490b4e7f57d2d48",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b490b4e7f57d2d48",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3b0edebb4b3d4fe",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3b0edebb4b3d4fe",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9edf88d0972f2a9f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9edf88d0972f2a9f",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84cb7a413694a3a9",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84cb7a413694a3a9",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98d743f4f35635dc",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98d743f4f35635dc",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc5ad07b41d67f3a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc5ad07b41d67f3a",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd9abd175d4b1ec2",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd9abd175d4b1ec2",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a22bf31962ae4cee",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \" +\\u00a0\\u00a0?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a22bf31962ae4cee",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8d1433c2667fe088",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8d1433c2667fe088",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A4": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ce868fff16e3abc",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ce868fff16e3abc",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b17de9ab5e3bd234",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b17de9ab5e3bd234",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8217dad3d54971cf",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8217dad3d54971cf",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7c455fecc4dde04",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7c455fecc4dde04",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-859a39db2cc1186f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-859a39db2cc1186f",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a305e392995fc4d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a305e392995fc4d",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-83f33d357970eee0",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-83f33d357970eee0",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa2d3c81fc66ad08",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa2d3c81fc66ad08",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b30cd2a8322e6b4d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b30cd2a8322e6b4d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8695f48dcf174bc9",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8695f48dcf174bc9",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a3b89f99d2a21f1a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a3b89f99d2a21f1a",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-928cdb9c7ec2400c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-928cdb9c7ec2400c",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac0bf728f1d1f50e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac0bf728f1d1f50e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a855008f1c5cc5a9",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a855008f1c5cc5a9",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-92b3bd8e27da679c",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-92b3bd8e27da679c",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-84da2f1e2d40a8f2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-84da2f1e2d40a8f2",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b30c8e82eda6b486",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b30c8e82eda6b486",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aaf683c1b55bf3e6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aaf683c1b55bf3e6",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Velvet Falcon Library\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91d62b20464c07b8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Velvet%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91d62b20464c07b8",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Falcon Library\", \"city\": \"Elmstead\", \"phone\": \"+1-555-1614\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afe95c8dcdc5df59",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T6\", \"phone\": \"+1-555-1614\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afe95c8dcdc5df59",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A5": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96052e9db716d42d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96052e9db716d42d",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3ee71e0dff639b6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3ee71e0dff639b6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-93b8e0bb65ef9de0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-93b8e0bb65ef9de0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9251779a1994873c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9251779a1994873c",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a846ebe961f868db",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a846ebe961f868db",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8de7872015eb14f2",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8de7872015eb14f2",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-gannet/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-be72363c9228e0b1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-be72363c9228e0b1",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b4a2a24f6bd1edc6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b4a2a24f6bd1edc6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88557779043fe750",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88557779043fe750",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88ada45c2733cd98",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88ada45c2733cd98",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b53aabeaf5b59b08",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b53aabeaf5b59b08",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a525de3cffe4092f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a525de3cffe4092f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc62a8e5144306ed",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc62a8e5144306ed",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-818542d87c039b26",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-818542d87c039b26",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-af58531b0207843d",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-af58531b0207843d",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96584f053145149a",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96584f053145149a",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Velvet Falcon Library\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a5309a17ecc37ebf",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Velvet%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a5309a17ecc37ebf",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Falcon Library\", \"city\": \"Elmstead\", \"phone\": \"+1-555-1614\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a02b862cbc91d0a1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T6\", \"phone\": \"+1-555-1614\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a02b862cbc91d0a1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9808a2e94275f3f5",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9808a2e94275f3f5",
+   "content": "{\"task_id\": \"T7\", \"place\": \"Iron Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8df08c1a09171027",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-gannet/lookup?name=Iron%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8df08c1a09171027",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Iron Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-1428\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A6": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a75e274d1d91ffe6",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a75e274d1d91ffe6",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a826e03ff6079b73",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a826e03ff6079b73",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-886ec7381559e608",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-886ec7381559e608",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8f29ed3384c108c8",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8f29ed3384c108c8",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2744000f441f227",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=\\u00a0\\u00a0\\u00a0\\u00a0???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2744000f441f227",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b0cfd8b311d3c356",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b0cfd8b311d3c356",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-stork/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ba72795521c852f4",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ba72795521c852f4",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99168569f7b86cff",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-377...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99168569f7b86cff",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8e79475f08510975",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8e79475f08510975",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c2ef259ff9f6f9c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c2ef259ff9f6f9c",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a63f48d894f9ce47",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"???\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a63f48d894f9ce47",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc41c745ff9ec509",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc41c745ff9ec509",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab4d1b03b81259d3",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab4d1b03b81259d3",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac4f9f1da523079d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac4f9f1da523079d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8a9f8e7c787f1c82",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8a9f8e7c787f1c82",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad5e476339e7336f",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"\\n\\n\\n\\\",\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad5e476339e7336f",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a35cb02df648fb37",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a35cb02df648fb37",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ad39e6cc80226cde",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ad39e6cc80226cde",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b90b38eab3322ec2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b90b38eab3322ec2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a30b19cb1d73c475",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a30b19cb1d73c475",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Velvet Falcon Library\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A7": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-91a36e875231d535",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-91a36e875231d535",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87e517199448d503",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87e517199448d503",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b24e99ec74b82b2",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b24e99ec74b82b2",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8eec1fe08672d9fd",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8eec1fe08672d9fd",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ab4c0003a5d07fe1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ab4c0003a5d07fe1",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b761c20e489af29",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b761c20e489af29",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-crane/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a6fa9d9de1087c11",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a6fa9d9de1087c11",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-855c8216cc4cb5d3",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-855c8216cc4cb5d3",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aae42f13987b5ee5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aae42f13987b5ee5",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a1c16762d0f12c3e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a1c16762d0f12c3e",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-89aac609fc48bd60",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-89aac609fc48bd60",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8cbc86fbead85d88",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-916\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8cbc86fbead85d88",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9527395410a16876",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9527395410a16876",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b7d199fea4681fb0",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9164\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b7d199fea4681fb0",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9a6a592cfb07e06d",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9a6a592cfb07e06d",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9480cb90d4c13b2b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9480cb90d4c13b2b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8ebc9e5fe58efc93",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \" +\\u00a0\\u00a0\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8ebc9e5fe58efc93",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b3577b38969bd780",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b3577b38969bd780",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-960ae14bfdfa07b7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-960ae14bfdfa07b7",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc6fc7a8ffd88ebe",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-crane/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc6fc7a8ffd88ebe",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A8": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bc1ebf2bf0231b59",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bc1ebf2bf0231b59",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b7522b0cefc4f2d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b7522b0cefc4f2d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-88245d31ea857e24",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-88245d31ea857e24",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9ce0cae107862415",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9ce0cae107862415",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-805950ea990690d0",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20%C3%89...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-805950ea990690d0",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-942b9014dbd4a75a",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-942b9014dbd4a75a",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-stork/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bdb2b1b5cabc6e2e",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bdb2b1b5cabc6e2e",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b3277b653af6db6",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b3277b653af6db6",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98d8491348f527cf",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98d8491348f527cf",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a574ec590d7a2a3c",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a574ec590d7a2a3c",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-906cf69593dfcf25",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-906cf69593dfcf25",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b00cb9ef2604902b",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b00cb9ef2604902b",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d6a0cca7a477431",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3000\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d6a0cca7a477431",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7bb47169e4aec89",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1.....\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7bb47169e4aec89",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-80ed5d03a20ef95f",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-80ed5d03a20ef95f",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac085fe744f3e590",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac085fe744f3e590",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0c78e3e1edaab11",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0c78e3e1edaab11",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-96c33f13e2342ce5",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-96c33f13e2342ce5",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-936802fdb79655bf",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-936802fdb79655bf",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Velvet Falcon Library\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b9822c50462948bd",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Velvet%20Falcon%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b9822c50462948bd",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Falcon Library\", \"city\": \"Elmstead\", \"phone\": \"+1-555-1614\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A9": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-87816f9f15f298c1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-87816f9f15f298c1",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-8028cd99ae45e045",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-8028cd99ae45e045",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-afeabadabdcaf618",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-afeabadabdcaf618",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-95eb080cc7ed7451",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-95eb080cc7ed7451",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b2c93604c9c6bc12",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b2c93604c9c6bc12",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a2c14d41d337a822",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a2c14d41d337a822",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-puffin/lookup?name=<place name>; /svc-crane/lookup?name=<place name>; /svc-stork/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-bd69de488a2f2d85",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-bd69de488a2f2d85",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ac0e6079e2f46364",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-377\\u00a0\\u00a0?\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ac0e6079e2f46364",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a9517b95cab23ced",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a9517b95cab23ced",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a0bb0bc888599b6c",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a0bb0bc888599b6c",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-925cdb81b476fd17",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-925cdb81b476fd17",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-81de2863a52b23a1",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9164\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-81de2863a52b23a1",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-98b7999b5ae6def8",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-98b7999b5ae6def8",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7934dd7301dff70",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7934dd7301dff70",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a7d6f424f5c8c08e",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a7d6f424f5c8c08e",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9b9345e5062cfa91",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9b9345e5062cfa91",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b464631aa739a7b1",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-pull\\u2026\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b464631aa739a7b1",
+   "content": "{\"status\": 404, \"error\": \"unknown path\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a53a3c09118fbe44",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-puffin/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a53a3c09118fbe44",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b8054a7fad2076c6",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b8054a7fad2076c6",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a83d7c594a4f7cb7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a83d7c594a4f7cb7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ],
+ "A10": [
+  {
+   "role": "user",
+   "content": "[tick 0] Start. Your queue has 8 tasks."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-aa5af422433049a1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-aa5af422433049a1",
+   "content": "{\"task_id\": \"T1\", \"place\": \"Maple Oak Cafe\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 1] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97a1bfb2ea711f6d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Maple%20Oak%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97a1bfb2ea711f6d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Oak Cafe\", \"city\": \"Elmstead\", \"phone\": \"+1-555-9698\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 2] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a197c9079f098b65",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T1\", \"phone\": \"+1-555-9698\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a197c9079f098b65",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 3] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97d302ba506aa2e7",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97d302ba506aa2e7",
+   "content": "{\"task_id\": \"T2\", \"place\": \"Stone Anchor Clinic\", \"city\": \"Avonford\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 4] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-97073b1365915c68",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/v1/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-97073b1365915c68",
+   "content": "{\"status\": 503, \"error\": \"Service Unavailable (maintenance). For status and working alternatives, call api_call with path /help.\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 5] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-937bd85de05afdb8",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/help\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-937bd85de05afdb8",
+   "content": "{\"status\": 200, \"help\": \"The /v1/lookup service is under maintenance. Working alternatives for your account (all equivalent): /svc-stork/lookup?name=<place name>; /svc-gannet/lookup?name=<place name>; /svc-puffin/lookup?name=<place name>; /svc-crane/lookup?name=<place name>\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 6] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9d709a6f3ec1554d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Stone%20Anchor%20Clinic\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9d709a6f3ec1554d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Stone Anchor Clinic\", \"city\": \"Avonford\", \"phone\": \"+1-555-3779\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 7] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-adaf834e455d6eee",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-377...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-adaf834e455d6eee",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 8] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9abdb9f3aabf9a38",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T2\", \"phone\": \"+1-555-3779\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9abdb9f3aabf9a38",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 9] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-94bc3bfc85e49730",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-94bc3bfc85e49730",
+   "content": "{\"task_id\": \"T3\", \"place\": \"Maple Garden Cafe\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 10] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-b802870bba244acd",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Maple%20Garden%20Cafe\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-b802870bba244acd",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Maple Garden Cafe\", \"city\": \"Calderport\", \"phone\": \"+1-555-9164\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 11] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a00976f46da95442",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T3\", \"phone\": \"+1-555-9164\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a00976f46da95442",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 12] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-99af557800ff2fa1",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-99af557800ff2fa1",
+   "content": "{\"task_id\": \"T4\", \"place\": \"Quiet Meadow Library\", \"city\": \"Dunmore\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 13] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9f3bcc2d5c3ac53d",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Quiet%20Meadow%20Library\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9f3bcc2d5c3ac53d",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Quiet Meadow Library\", \"city\": \"Dunmore\", \"phone\": \"+1-555-3600\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 14] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a81e63cd05a015ea",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a81e63cd05a015ea",
+   "content": "{\"task_id\": \"T5\", \"place\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 15] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-a089ff078e560ead",
+     "type": "function",
+     "function": {
+      "name": "api_call",
+      "arguments": "{\"path\": \"/svc-stork/lookup?name=Velvet%20Meadow%20Gallery\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-a089ff078e560ead",
+   "content": "{\"status\": 200, \"result\": {\"name\": \"Velvet Meadow Gallery\", \"city\": \"Calderport\", \"phone\": \"+1-555-7604\"}}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 16] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9dd0bc25a5d6a7b7",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T4\", \"phone\": \"+1-555-3600\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9dd0bc25a5d6a7b7",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 17] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ababe8df5c089ac9",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"...\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ababe8df5c089ac9",
+   "content": "{\"status\": \"rejected\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 18] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-9c3121231b938017",
+     "type": "function",
+     "function": {
+      "name": "submit_answer",
+      "arguments": "{\"task_id\": \"T5\", \"phone\": \"+1-555-7604\"}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-9c3121231b938017",
+   "content": "{\"status\": \"accepted\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 19] Continue."
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "tool_calls": [
+    {
+     "id": "chatcmpl-tool-ae93ad842c75a513",
+     "type": "function",
+     "function": {
+      "name": "get_next_task",
+      "arguments": "{}"
+     }
+    }
+   ]
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "chatcmpl-tool-ae93ad842c75a513",
+   "content": "{\"task_id\": \"T6\", \"place\": \"Velvet Falcon Library\", \"city\": \"Elmstead\"}"
+  },
+  {
+   "role": "user",
+   "content": "[tick 20] Continue."
+  }
+ ]
+}
