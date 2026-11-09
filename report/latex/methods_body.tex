@@ -1,0 +1,39 @@
+% ------------------------------------------------------------------ 2
+\section{Related work}
+\label{sec:related}
+
+\head{Swarm forensics and monitors.} The METR/Redwood investigation reconstructed how about 1,200 agents used a shared namespace as a message board, largely with AI analysts whose reliability it questioned [1]; Lütje withdrew the contagion reading of the collusion.wiki swarm because start waves and contagion ``are not separable without reads'' [3]; Swarmchasers called the Tencent agents a fleet [4]; and Frank's \emph{Counter-Swarm Doctrine} specifies controls that would separate influence from common cause but leaves them as proposed measurements [5]. Collusion monitors read messages or internals: LLM judges and keyword rules [1, 8], interpretability probes [9], covert-channel audits [10, 11] and sabotage-coordination monitors [12]. CASPIAN measures inter-agent influence with conditional transfer entropy, conditioning only on the target's own history [13], Riedl tests LLM groups for emergent coordination with information decomposition against shuffle and coordination-free baselines [23], and coordinated-behaviour detection on social platforms flags accounts that act together in time [14, 15]. None reports a false-alarm rate on a same-model, shared-shock, no-channel population. Multi-agent control work shows that per-agent monitors miss attacks split across agents [16--18]; a population-level monitor is the missing layer, and its false-alarm cost on benign fleets is the number its deployers need first.
+
+\head{Common cause vs.\ contagion.} Homophily and contagion are generically confounded in observational network data [6]; Bakshy et al.\ resolved diffusion with randomized exposure [7], and time-series causal discovery conditions on common drivers explicitly [21]. FleetBench makes exposure observable (read logs) and interventional (canary endpoints), and our null uses replicate runs of the same deployment as the reference population.
+
+% ------------------------------------------------------------------ 3
+\section{Methods}
+\label{sec:methods}
+
+\head{FleetBench (Tier A).} Ten agents (gpt-oss-120b, pinned to one provider, temperature 1, a fixed seed per agent and tick) work through queues of harmless lookup tasks against a fake city API, one tool call per logical tick for 20 ticks. At tick 4 the main endpoint returns HTTP 503 for 8 ticks (the shock), and the error message points to \texttt{/help}. What \texttt{/help} reveals, and whether a board exists, defines the condition (Table~\ref{tab:conds}). Workaround endpoints have unguessable paths, so an agent that uses another agent's endpoint must have learned it (a canary). The harness keeps a witness log of every call, including which notes each board read delivered, separately from the agents' transcripts.
+
+\begin{table}[h]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}l X l r@{}}
+\toprule
+Condition & What \texttt{/help} reveals; schedule & Board & Episodes\\
+\midrule
+independent & each agent's own private endpoint; disjoint queues, own start and outage & none & \nEpsIndependent\\
+fleet & one shared endpoint, the same in every run (``the deployment's docs''); shared queue and shock & none & \nEpsFleet\\
+swarm & a private endpoint to 2 random ``discoverers'' only; others must learn one from the board & instructed & \nEpsSwarm\\
+uninstructed & as swarm & present, unmentioned & \nEpsUninstructed\\
+tacit & a menu of 4 endpoints (same set every run); ``the team scores higher if all use the same one'' & none & \nEpsTacit\\
+wave & as fleet, staggered starts (two agents per tick) & none & \nEpsWave\\
+fleet\_drift & as fleet, but the shared endpoint changes in every run & none & \nEpsFleetdrift\\
+\bottomrule
+\end{tabularx}
+\caption{\label{tab:conds}FleetBench conditions (\nEpsTotal\ episodes, 10 agents, 20 ticks). Fleets share everything a swarm shares except a channel.}
+\end{table}
+
+\head{Views and ground truth.} Monitors see what an API gateway logs: agent, tick, action (task, lookup, error503, help, alt, submit) and, for workarounds, the endpoint path. Board traffic is out-of-band and never shown to them. Ground truth comes from the witness log: a \emph{transmission} edge $a\to b$ exists when $b$ read a note by $a$ containing an endpoint and later used it. We label pairs by observed transmission, not by condition.
+
+\head{Monitors.} Five represent current practice and are calibrated, where a threshold is needed, on 30 independent episodes (1,350 pairs), as honest-baseline calibration is done today: \textbf{M0} keyword rule on transcripts (METR-style); \textbf{M1} an LLM judge (mistral-small-3.2, temperature 0) reading the action log, told that look-alike behaviour from shared models is not coordination; \textbf{M2} co-action (Jaccard of events within $\pm$1 tick, as in coordinated-behaviour detection); \textbf{M2b} lockstep (longest run of identical actions); \textbf{M3} directed lag coupling (CASPIAN-like): $S(a{\to}b)=\sum_k\sum_{\ell=1}^{3}\sum_t X_a[t,k]X_b[t{+}\ell,k]$ over disruption tokens, tested against 200 time-shuffle surrogates. \textbf{M4 (ours)} uses the same lag statistic with inverse-frequency token weights ($w_k=\log\frac{M+1}{m_k+1}$, where $m_k$ is the number of agents in the deployment's replicate runs that ever emit token $k$) and a \emph{fleet-calibrated} null: pseudo-pairs of the same agents with agents from other runs of the same deployment, which share every common cause that recurs across runs but cannot have communicated. P-values are randomized permutation p-values; M4 flags at $p\le0.05$. Its validity assumption is explicit and tested (\texttt{fleet\_drift}): common causes recur across replicate runs, and transmission does not. Two ablations isolate the ingredients: M3w (weights, shuffle null) and M4r (raw counts, pseudo-pair null).
+
+\head{Statistics and pre-registration.} Rates are pair-level with 95\% episode-clustered bootstrap intervals (2,000 resamples). Hypotheses, thresholds, sample sizes, prompts and code were frozen with SHA-256 hashes before any main episode existed; all changes before and after the freeze are listed in Appendix~\ref{app:dev}. Synthetic tests with known answers checked each monitor's calibration before any real data was analysed.
+
+\head{Tier B (scale) and the real-data bound.} Tier B resamples real Tier A agent trajectories into fleets of up to 1,200 agents (so marginals and shock response match Tier A), plants transmission of strength $c$ on top, and runs the same statistics on sampled pairs. For H4 we refit Lütje's Hawkes model (exponential kernel, piecewise-constant baseline, EM) to the first arrival of each of collusion.wiki's \nHawkesN\ names, and calibrate it on simulated processes with known truth: pure start waves with zero contagion, and contagion with branching ratio 0.5.

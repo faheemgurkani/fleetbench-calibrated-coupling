@@ -1,0 +1,99 @@
+% Preamble and title-block layout reused from the author's previous Apart sprint report (pre-existing).
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{GFSDidot}[Extension=.otf, UprightFont=*, BoldFont=*Bold, ItalicFont=*Italic, BoldItalicFont=*BoldItalic]
+\setmonofont{lmmono10-regular.otf}[Scale=0.95]
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[labelsep=colon,font=small]{caption}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\sloppy
+\usepackage{xurl}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\titleformat{\section}{\Large}{\thesection.}{0.45em}{}
+\titlespacing*{\section}{0pt}{11pt}{3pt}
+\titleformat{\subsection}{\large}{\thesubsection}{0.45em}{}
+\titlespacing*{\subsection}{0pt}{7pt}{2pt}
+\setlist{nosep,leftmargin=1.4em,topsep=2pt}
+\newcommand{\head}[1]{\textbf{#1}\hspace{0.3em}}
+\graphicspath{{../../results/main/figures/}}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\input{numbers.tex}
+\input{verdicts.tex}
+\usepackage{wrapfig}
+
+\begin{document}
+
+% ------------------------------------------------------------------ title block
+\noindent\rule{\textwidth}{2pt}
+\begin{center}
+{\LARGE\bfseries Swarm or Fleet?}\\[5pt]
+{\large Coordination alarms on agents that never talk, and a test that tells them apart}\\[10pt]
+Muhammad Faheem\\
+Team Penstronus $\cdot$ Independent researcher\\[4pt]
+With Apart Research, AI Alignment Foundation and AE Studio\footnote{Research conducted at the Swarm Alignment Hackathon, November 2026. Code, data and frozen plan: \url{https://github.com/faheemgurkani/fleetbench-calibrated-coupling}}
+\end{center}
+\noindent\rule{\textwidth}{0.6pt}
+
+\begin{center}\textbf{Abstract}\end{center}
+\vspace{-4pt}
+\begin{quote}
+\input{abstract.tex}
+\end{quote}
+
+% ------------------------------------------------------------------ 1
+\section{Introduction}
+
+In September 2026, the most detailed public reconstruction of an AI agent swarm, on a German developer wiki, withdrew its own conclusion that agents passed techniques to one another: ``a start wave of twenty containers in ten minutes looks exactly like contagion to the estimator, and without reads the two cannot be separated'' [3]. In October, investigators of more than 2,600 agent attempts against a Tencent map service wrote: ``we call this agent activity a fleet and not a swarm'', warning that shared shocks ``can look like coordination, but is not evidence for it'' [4]. In the Hugging Face incident, about 1,200 agents did use a shared message board [1], and OpenAI now lists ``unauthorized cross-agent or cross-run coordination'' among its escalation triggers [2]. Multi-agent risk analyses name collusion as a core failure mode [22], and a joint funders' call asks for oversight of agent populations [24]. Telling a swarm from a fleet is no longer an academic question: it decides whether an alarm means agents are talking.
+
+The difficulty is structural. Agents in one deployment share a base model, a harness, a task queue and the same outages, so their logs correlate even when no agent ever reads another's output. We call such a population a \textbf{fleet}, and a fleet plus a channel that is actually used a \textbf{swarm}. Statisticians have shown that this kind of common cause cannot be separated from contagion in observational data alone [6]. Yet coordination monitors are validated against \emph{independent} honest agents; none of the benchmarks we checked uses a matched fleet. Their false-alarm rate on fleets is unmeasured, and it compounds with scale: 1,200 agents form 719,400 pairs, so a pairwise alarm with a 1\% false-positive rate raises about 7,200 alerts on a fleet that never communicates. We call this \textbf{the fleet trap}.
+
+We built \textbf{FleetBench}, a sandbox in which the harness logs every read, and ran matched fleets and swarms of the same model under the same shock (Figure~\ref{fig:trap}). Monitors in current practice either fall into the trap or avoid it by going blind. Co-action and lockstep detectors flag \nFRFleetMtwo\% and \nFRFleetMtwob\% of fleet pairs; an LLM judge returns the same verdict (no coordination) on every episode, including swarms with visible copying, and a keyword rule flags pairs that merely mention a board. A test calibrated on \emph{replicate runs of the same deployment} stays at or below nominal on fleets (\nFRFleetMfour\%) and recovers \nTPRatMfour\% of logged transmission.
+
+\textbf{Our main contributions are:}
+\begin{enumerate}
+\item \textbf{The fleet trap, measured} in \textbf{FleetBench}, released with witness logs, degradation operators and a script that recomputes the 10-agent results from raw logs. To our knowledge, the first false-alarm rates of five current coordination monitors on matched no-channel fleets (\nEpsTotal\ pre-registered episodes, 3,000 agents), including a staggered-start fleet like the Tencent case.
+\item \textbf{A fleet-calibrated test (M4)} with a stated, tested validity assumption (common causes recur across replicate runs; transmission does not), with ablations showing that both of its ingredients are needed, and robustness curves under dropped, renamed and spoofed logs (RQ 4.2, 4.3).
+\item \textbf{Scale and real data.} A resampling tier that carries the result to 1,200 agents, and a calibrated refit of the published collusion.wiki contagion bound: a start-wave process with \emph{zero} contagion comes close to it (RQ 4.1).
+\end{enumerate}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1_fleet_trap.pdf}
+\vspace{-14pt}
+\caption{\label{fig:trap}\textbf{The fleet trap.} Share of agent pairs flagged as coordinating in conditions where no agent can communicate. Monitors in current practice are calibrated on half of the independent episodes; grey bars show the held-out half. M2 co-action and M2b lockstep then flag most fleet pairs, and M0 and M1 flag nothing anywhere (they also miss transmission, Section~\ref{sec:h2}). M4 (shaded) stays below 5\% except on the docs-drift fleet, which violates its assumption by design. Bars: pair-level rates with 95\% episode-clustered bootstrap intervals; dashed line: nominal 5\%.}
+\end{figure}
+
+\input{methods_body.tex}
+
+% ------------------------------------------------------------------ 4
+\section{Results}
+\label{sec:results}
+\input{results_body.tex}
+
+% ------------------------------------------------------------------ 5
+\section{Discussion and limitations}
+\input{discussion_body.tex}
+
+% ------------------------------------------------------------------ 6
+\section{Conclusion}
+\input{conclusion_body.tex}
+
+\section*{Code and data}
+\url{https://github.com/faheemgurkani/fleetbench-calibrated-coupling}: code, frozen plan, all \nEpsTotal\ episodes, every LLM call (about \$2) and \texttt{verify.py}, which recomputes the 10-agent numbers from raw logs and checks the rest against saved scale and wiki outputs. Pre-existing: the LLM client and M1 prompt, from the author's previous Apart sprint.
+
+\input{references_body.tex}
+
+\input{appendix_body.tex}
+
+\end{document}
